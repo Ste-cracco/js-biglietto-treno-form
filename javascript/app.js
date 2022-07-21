@@ -22,9 +22,21 @@
 //             }       
 
 
-const buttonElement = document.querySelector('input[type="submit"]'); // Creo variable "buttonElement" e la "collego" all'attributo html "input type = submit"
+// const buttonElement = document.querySelector('input[type="submit"]'); 
+// buttonElement.addEventListener('click', function ()  { 
+//     const inputElement = document.querySelector('input[name="nome_cognome"]');  
+//     const nomePasseggero = inputElement.value; 
+//     console.log(nomePasseggero); 
+// })
+
+const buttonElement = document.querySelector('input[type="submit"]'); 
 buttonElement.addEventListener('click', function ()  { // Creo variabile bottone e gli aggiungo un evento (click) con una funzione
-    const inputElement = document.querySelector('input[name="nome_cognome"]'); // Creo variabile con l'input (inserito dall'utente) dell'attributo con name "nome_cognome"
-    const nomePasseggero = inputElement.value; // Il value dell'inputElement glielo do alla variabile "nomePasseggero"
-    console.log(nomePasseggero); // Stampo il nomePasseggero
+    const inputNomeCognome = document.querySelector('input[name="nome_cognome"]'); // Creo variabile con l'input (inserito dall'utente) dell'attributo con name "nome_cognome"
+    const nomePasseggero = inputNomeCognome.value; // Il value dell'inputElement glielo do alla variabile "nomePasseggero"
+    const inputKilometri = document.querySelector('input[name="kilometri"]');
+    const prezzoBase = inputKilometri.value * 0.21;
+    console.log(nomePasseggero, prezzoBase); 
 })
+
+
+
