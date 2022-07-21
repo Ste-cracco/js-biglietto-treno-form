@@ -30,12 +30,24 @@
 // })
 
 const buttonElement = document.querySelector('input[type="submit"]'); 
-buttonElement.addEventListener('click', function ()  { // Creo variabile bottone e gli aggiungo un evento (click) con una funzione
-    const inputNomeCognome = document.querySelector('input[name="nome_cognome"]'); // Creo variabile con l'input (inserito dall'utente) dell'attributo con name "nome_cognome"
-    const nomePasseggero = inputNomeCognome.value; // Il value dell'inputElement glielo do alla variabile "nomePasseggero"
+buttonElement.addEventListener('click', function ()  { 
+    const inputNomeCognome = document.querySelector('input[name="nome_cognome"]'); 
+    const nomePasseggero = inputNomeCognome.value;
     const inputKilometri = document.querySelector('input[name="kilometri"]');
     const prezzoBase = inputKilometri.value * 0.21;
-    console.log(nomePasseggero, prezzoBase); 
+    let inputEta = document.querySelector('select[name="fascia_eta"]');
+    let etaPasseggero = inputEta.value;
+    if (etaPasseggero < 18) {
+        let scontoMinorenni = (prezzoBase / 100) * 20;
+        let prezzoMinorenni = prezzoBase - scontoMinorenni
+        console.log ('Il costo del biglietto è di €' + prezzoMinorenni.toFixed(2))
+    }
+    if (etaPasseggero > 65) {
+        let scontoOver65 = (prezzoBase / 100) * 40;
+        let prezzoOver65 = prezzoBase - scontoOver65;
+        console.log ('Il costo del biglietto è di € ' + prezzoOver65.toFixed(2))
+    }
+    
 })
 
 
