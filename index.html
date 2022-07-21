@@ -4,24 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Biglietti Treno Form</title>
 </head>
 <body>    
     <main>
-        <label for="nome_cognome">Inserisci nome e cognome:</label>
-        <input type="text" id="nome_cognome" name="nome_cognome">
+        <div class="container">
+            <h2>Calcola il prezzo del tuo biglietto</h2>
+            <div class="container_input">
+                <div class="row flex">
+                    <div class="input flex_column">
+                        <label for="nome_cognome">Nome e cognome:</label>
+                        <input class="bordo_input" type="text" id="nome_cognome" name="nome_cognome">
+                    </div>
+            
+                    <div class="input flex_column">
+                        <label for="kilometri">Km da percorrere:</label>
+                        <input class="bordo_input" type="text" id="kilometri" name="kilometri">
+                    </div>
+            
+                    <div class="input flex_column">
+                        <label for="fascia_eta">Fascia d'età:</label>
+                        <select class="bordo_input" name="fascia_eta" id="fascia_eta">
+                            <option value="maggiorenne">Maggiorenne (fino 65 anni)</option>
+                            <option value="minorenne">Minorenne</option>
+                            <option value="over65">Over 65</option>
+                        </select>
+                    </div> 
+                </div>                
+                <div class="row tasti_submit flex">                    
+                    <input type="submit" value="Genera">                       
+                    <input type="submit" value="Annulla">                        
+                </div>
+            </div> <!-- Chiusura Container Input -->
 
-        <label for="kilometri">Inserisci i km da percorrere:</label>
-        <input type="text" id="kilometri" name="kilometri">
-
-        <label for="fascia_eta">Fascia d'età:</label>
-        <select name="fascia_eta" id="fascia_eta">
-            <option value="maggiorenne">---</option>
-            <option value="minorenne">Minorenne</option>
-            <option value="over65">Over 65</option>
-        </select>
-
-        <input type="submit" value="Invia">
+            <h2>Il tuo biglietto</h2>
+            <div class="container_input">
+                <div class="row flex">
+                    
+                </div>
+            </div> <!-- Chiusura Container Input -->
+        </div> <!-- Chiusura Main Container -->          
+        
 
     </main>
     
