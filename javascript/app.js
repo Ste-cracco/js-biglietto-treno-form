@@ -29,29 +29,62 @@ buttonElement.addEventListener('click', function ()  {
     const nomePasseggero = inputNomeCognome.value;
 
     const inputKilometri = document.querySelector('input[name="kilometri"]');
-    const prezzoBase = parseFloat(inputKilometri.value * 0.21);
+    const prezzoBase = parseInt(inputKilometri.value * 0.21);
 
     let inputEta = document.getElementById('fascia_eta');
     let etaPasseggero = inputEta.value;
 
-    if (isNaN(kilometri)) {
-           console.log ('Inserisci un numero di km valido')
-    }   
-    else if (etaPasseggero == 'minorenne') {
-            let scontoMinorenni = (prezzoBase / 100) * 20;
-            let prezzoMinorenni = prezzoBase - scontoMinorenni;
-            console.log(nomePasseggero, 'Il prezzo del biglietto è di €' + prezzoMinorenni);
+    // if (isNaN(inputKilometri)) {
+    //         alert('Inserisci numero km vaido!')
+    // }   
+    
+    if (etaPasseggero == 'minorenne') {
+        let scontoMinorenni = (prezzoBase / 100) * 20;
+        let prezzoMinorenni = prezzoBase - scontoMinorenni;
+        domElement = document.getElementById('print_area')
+        domContent = 
+        `<tr>
+            <td> ${nomePasseggero} </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td> ${prezzoMinorenni} </td>
+        </tr>`
+        domElement.innerHTML = domContent;
+        // console.log(nomePasseggero, 'Il prezzo del biglietto è di €' + prezzoMinorenni);
     }
     else if (etaPasseggero == 'over65') {
         let scontoOver65 = (prezzoBase / 100) * 40;
         let prezzoOver65 = prezzoBase - scontoOver65;
-        console.log(nomePasseggero, 'Il prezzo del biglietto è di €' + prezzoOver65);
+        domElement = document.getElementById('print_area')
+        domContent = 
+        `<tr>
+            <td> ${nomePasseggero} </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td> ${prezzoOver65} </td>
+        </tr>`
+        domElement.innerHTML = domContent;
+        // console.log(nomePasseggero, 'Il prezzo del biglietto è di €' + prezzoOver65);
     }
     else if (etaPasseggero == 'maggiorenne') {
         let prezzoMaggiorenni = prezzoBase;  
-        console.log(nomePasseggero, 'Il prezzo del biglietto è di €' + prezzoMaggiorenni);
-    }    
+        domElement = document.getElementById('print_area')
+        domContent = 
+        `<tr>
+            <td> ${nomePasseggero} </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td> ${prezzoMaggiorenni} </td>
+        </tr>`
+        domElement.innerHTML = domContent;
+        // console.log(nomePasseggero, 'Il prezzo del biglietto è di €' + prezzoMaggiorenni);
+    }  
 })
+
+
 
 
 

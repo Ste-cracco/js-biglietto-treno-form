@@ -73,3 +73,13 @@ label {
     background-color: lightgray;
 }
 
+/* Section 2 */
+
+.container_table {
+    min-height: 200px;
+    background-color: white;
+}
+
+th {
+    padding: 0 15px;
+}
